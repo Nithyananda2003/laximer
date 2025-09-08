@@ -1,19 +1,19 @@
 import puppeteer from "puppeteer";
 
 let instance = null;
-
 const getBrowserInstance = async () => {
     if (!instance) {
         instance = await puppeteer.launch({
             headless: true,
             args: [
-                "--disable-gpu",
-                "--no-sandbox",
-                "--disable-setuid-sandbox",
-                '--lang="en-US"'
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-dev-shm-usage',
+                '--disable-gpu',
+                '--lang=en-US'
             ]
         });
-        console.log("Puppeteer instance launched");
+        console.log("Browser instance started");
     }
     return instance;
 };
