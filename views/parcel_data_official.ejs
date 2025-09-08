@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parcel Data</title>
+</head>
+<body>
+    <h1>Parcel Information</h1>
+    <p><strong>Parcel Number:</strong> <%= parcel_number %></p>
+    <p><strong>Owner Name:</strong> <%= owner_name[0] %></p>
+    <p><strong>Property Address:</strong> <%= property_address %></p>
+    <p><strong>Taxing Authority:</strong> <%= taxing_authority %></p>
+    <p><strong>Notes:</strong> <%= notes %></p>
+
+    <h2>Tax History</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Year</th>
+            <th>Payment Type</th>
+            <th>Status</th>
+            <th>Base Amount</th>
+            <th>Amount Paid</th>
+            <th>Amount Due</th>
+            <th>Due Date</th>
+            <th>Paid Date</th>
+        </tr>
+        <% tax_history.forEach(function(row){ %>
+        <tr>
+            <td><%= row.year %></td>
+            <td><%= row.payment_type %></td>
+            <td><%= row.status %></td>
+            <td><%= row.base_amount %></td>
+            <td><%= row.amount_paid %></td>
+            <td><%= row.amount_due %></td>
+            <td><%= row.due_date %></td>
+            <td><%= row.paid_date %></td>
+        </tr>
+        <% }); %>
+    </table>
+</body>
+</html>

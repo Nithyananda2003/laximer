@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Larimer County Tax Search</title>
+</head>
+<body>
+    <h1>Search Larimer County Property Tax</h1>
+    <form action="/larimer/search" method="POST">
+        <label for="account">Parcel Number:</label>
+        <input type="text" id="account" name="account" required>
+        <br><br>
+        <label for="fetch_type">Fetch Type:</label>
+        <select id="fetch_type" name="fetch_type">
+            <option value="html">HTML</option>
+            <option value="api">API (JSON)</option>
+        </select>
+        <br><br>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
